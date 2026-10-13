@@ -1,0 +1,13 @@
+git add .  --> Move Files Staging Area
+
+git commit -m "Message" --> Move the files from Stagging Area to Local Repo
+
+git status 
+
+git remote -v  -->  check the origin url
+
+git log --oneline --> see the logs in one line 
+
+git stash  --> Temporary Storage 
+
+
