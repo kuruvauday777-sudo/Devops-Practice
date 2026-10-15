@@ -44,4 +44,32 @@ ssh -T git@github.com -->  Test the connection
 
 
 
+-----------------------------------------------------------------------------------------------------
+
+                          Git Revert Conflict — Practical Notes
+
+-----------------------------------------------------------------------------------------------------
+
+
+git log --oneline -4  -->  View recent commits
+git show d69f472   -->  Inspect a commit
+git show d69f472:Git/gitcommands  --> View the file content from that commit
+
+*Resolve the conflict
+If the intended result is to delete Git/gitcommands as part of the revert:
+git rm Git/gitcommands
+git revert --continue
+
+*Restore the file after reverting
+If I want the file back in the current working tree:
+git restore --source=d69f472 -- Git/gitcommands
+
+
+Command	Purpose
+git revert <commit>	Creates a new commit that reverses the selected commit's changes
+git revert --abort	Cancels a revert operation that is still in progress
+git restore <file>	Restores file content in the working tree
+git restore --source=<commit> -- <file>	Restores a file from a specified commit
+
+
 
